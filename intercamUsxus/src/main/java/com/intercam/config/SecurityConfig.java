@@ -13,29 +13,32 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
  */
 @Configuration
 public class SecurityConfig {
-  
+
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
-            .authorizeHttpRequests((requests) -> requests
-                .requestMatchers("/api-docs/**", "/swagger-ui.html/**", "/swagger-ui/index.html/**", "/prueba/**").permitAll() 
+                .csrf(csrf -> csrf.disable())
+                .headers(headers -> headers
+                .frameOptions(frameOptions -> frameOptions.sameOrigin())
+                )
+                .authorizeHttpRequests(requests -> requests
+                .requestMatchers("/api-docs/**", "/swagger-ui/**", "/h2-console/**", "/api/prueba/**", "/usuario/**").permitAll()
                 .anyRequest().authenticated()
-            );
-        
+                );
         return http.build();
     }
-    
+
     @Bean
     public WebMvcConfigurer corsConfigurer() {
         return new WebMvcConfigurer() {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/**")
-                    .allowedOrigins("*")
-                    .allowedMethods("GET", "POST", "PUT", "DELETE")
-                    .allowedHeaders("Authorization", "Content-Type", "Accept", "Origin");
+                        .allowedOrigins("*")
+                        .allowedMethods("GET", "POST", "PUT", "DELETE")
+                        .allowedHeaders("Authorization", "Content-Type", "Accept", "Origin");
             }
         };
     }
-    
+
 }
