@@ -13,8 +13,8 @@ public interface UsuarioService {
         
     String crearUsuario(UsuarioEntity usuario);
     
-//    String actualizarUsuario(Integer id, UsuarioEntity usuarioRegistro);
-//    
-//    List<UsuarioEntity> eliminarUsuario(Integer id);
+    String actualizarUsuario(Integer id, UsuarioEntity usuarioRegistro);
+    
+    String eliminarUsuario(Integer id);
             
 }

@@ -34,5 +34,27 @@
             ]]>
         </query>
     </named-native-query>
+    
+    <named-native-query
+        name="UsuarioEntity.actualizarUsuario">
+        <query>
+            <![CDATA[
+                UPDATE Usuario_Entity SET nombre = :nombre, 
+                apellido_Paterno = :apellidoPaterno, 
+                apellido_Materno = :apellidoMaterno, 
+                fecha_Nacimiento = :fechaNacimiento 
+                WHERE id = :id
+            ]]>
+        </query>
+    </named-native-query>
+    
+        <named-native-query
+        name="UsuarioEntity.eliminarUsuario">
+        <query>
+            <![CDATA[
+                DELETE FROM Usuario_Entity WHERE id = :id
+            ]]>
+        </query>
+    </named-native-query>
 
 </entity-mappings>

@@ -2,7 +2,6 @@ package com.intercam.repository;
 
 import com.intercam.entities.UsuarioEntity;
 import java.time.LocalDate;
-import java.util.Date;
 import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
@@ -24,11 +23,15 @@ public interface UsuarioRepository extends JpaRepository<UsuarioEntity, Integer>
             @Param ("apellidoMaterno") String apellidoMaterno,
             @Param ("fechaNacimiento") LocalDate fechaNacimiento);
     
-//    @Transactional
-//    void crearUsuario(String nombre, String apellidoPaterno, String apellidoMaterno, Date fechaNacimiento);
+    @Modifying
+    int actualizarUsuario(@Param ("id") Integer id,
+            @Param ("nombre") String nombre,
+            @Param ("apellidoPaterno") String apellidoPaterno,
+            @Param ("apellidoMaterno") String apellidoMaterno,
+            @Param ("fechaNacimiento") LocalDate fechaNacimiento);
     
-//    
-//    @Transactional
-//    void crearUsuario(UsuarioEntity id);
+
+    @Modifying
+    void eliminarUsuario(@Param("id") Integer id);
 
 }
