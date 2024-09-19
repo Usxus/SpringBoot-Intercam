@@ -19,14 +19,14 @@ public class CuentaEntity {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Integer id;
 
     @Digits(integer = 10, fraction = 0)
     @Column(nullable = false)
-    private long numeroCuenta;
+    private Integer numeroCuenta;
 
     @Min(value = 1, message = "Los ingresos deben ser mayores a 0")
     @Column(nullable = false)
-    private float ingresos;
+    private Float ingresos;
     
 }

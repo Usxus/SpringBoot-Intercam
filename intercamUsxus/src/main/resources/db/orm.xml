@@ -4,7 +4,35 @@
                  xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence/orm
                  http://xmlns.jcp.org/xml/ns/persistence/orm_2_1.xsd"
                  version="2.1">
-
-
+    
+    <named-native-query
+        name="UsuarioEntity.obtenerUsuarioId"
+        result-class="com.intercam.entities.UsuarioEntity">
+        <query>
+            <![CDATA[
+                SELECT * FROM Usuario_Entity WHERE id = :id
+            ]]>
+        </query>
+    </named-native-query>
+    
+    <named-native-query
+        name="UsuarioEntity.obtenerUsuario"
+        result-class="com.intercam.entities.UsuarioEntity">
+        <query>
+            <![CDATA[
+                SELECT * FROM Usuario_Entity
+            ]]>
+        </query>
+    </named-native-query>
+    
+    <named-native-query
+        name="UsuarioEntity.crearUsuario">
+        <query>
+            <![CDATA[
+                INSERT INTO Usuario_Entity (nombre, apellido_Paterno, apellido_Materno, fecha_Nacimiento) 
+                VALUES (:nombre, :apellidoPaterno, :apellidoMaterno, :fechaNacimiento)
+            ]]>
+        </query>
+    </named-native-query>
 
 </entity-mappings>

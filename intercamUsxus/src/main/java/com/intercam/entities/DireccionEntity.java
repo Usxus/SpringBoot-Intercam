@@ -18,7 +18,7 @@ public class DireccionEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Integer id;
 
     @Size(min = 6, max = 6, message = "El código postal debe tener 6 caracteres")
     @Column(nullable = false)

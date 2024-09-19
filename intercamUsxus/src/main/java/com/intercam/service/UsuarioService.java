@@ -9,6 +9,12 @@ import java.util.List;
  */
 public interface UsuarioService {
     
-    List<UsuarioEntity> obtenerTodosLosUsuarios();
+    List<UsuarioEntity> obtenerUsuario(Integer id);
+        
+    String crearUsuario(UsuarioEntity usuario);
+    
+//    String actualizarUsuario(Integer id, UsuarioEntity usuarioRegistro);
+//    
+//    List<UsuarioEntity> eliminarUsuario(Integer id);
             
 }

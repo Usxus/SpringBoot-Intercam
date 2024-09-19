@@ -1,13 +1,12 @@
 package com.intercam.entities;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.Temporal;
-import jakarta.persistence.TemporalType;
-import jakarta.validation.constraints.Past;
+import java.time.LocalDate;
 import java.util.Date;
 import lombok.Data;
 
@@ -21,7 +20,7 @@ public class UsuarioEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Integer id;
 
     @Column(nullable = false)
     private String nombre;
@@ -32,8 +31,8 @@ public class UsuarioEntity {
     @Column(nullable = false)
     private String apellidoMaterno;
 
-    @Past
-    @Temporal(TemporalType.DATE)
-    private Date fechaNacimiento;
+    @Column(nullable = false)
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy")
+    private LocalDate fechaNacimiento;
 
 }

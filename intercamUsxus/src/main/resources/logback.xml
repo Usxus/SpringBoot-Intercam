@@ -1,35 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
 
-    <!-- Guardar logs en un archivo con rotación diaria -->
     <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
         
-        <!-- Configurar la política de rotación basada en la fecha -->
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <!-- Archivo rotado con el formato de fecha (un archivo por día) -->
             <fileNamePattern>logs/api.intercam.usxus.%d{yyyy-MM-dd}.log</fileNamePattern>
-            <!-- Mantener archivos de logs de los últimos 30 días -->
             <maxHistory>30</maxHistory>
         </rollingPolicy>
-        
-        <!-- Configurar el patrón del log -->
+
         <encoder>
             <pattern>%d{yyyy-MM-dd HH:mm:ss} %-5level - %msg%n</pattern>
         </encoder>
     </appender>
 
-    <!-- Imprimir los logs en la consola -->
     <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>
             <pattern>%d{yyyy-MM-dd HH:mm:ss} %-5level - %msg%n</pattern>
         </encoder>
     </appender>
 
-    <!-- Definir el nivel de logging -->
     <root level="INFO">
-        <!-- Referencia al archivo de logs -->
         <appender-ref ref="FILE" />
-        <!-- Referencia a la consola -->
         <appender-ref ref="STDOUT" />
     </root>
 
