@@ -107,6 +107,54 @@
         </query>
     </named-native-query>
     
+    <named-native-query
+        name="CuentaEntity.obtenerCuentaId"
+        result-class="com.intercam.entities.CuentaEntity">
+        <query>
+            <![CDATA[
+                SELECT * FROM CUENTA_ENTITY WHERE id = :id
+            ]]>
+        </query>
+    </named-native-query>
     
+    <named-native-query
+        name="CuentaEntity.obtenerCuenta"
+        result-class="com.intercam.entities.CuentaEntity">
+        <query>
+            <![CDATA[
+                SELECT * FROM CUENTA_ENTITY 
+            ]]>
+        </query>
+    </named-native-query>
+    
+    <named-native-query
+        name="CuentaEntity.crearCuenta">
+        <query>
+            <![CDATA[
+                INSERT INTO CUENTA_ENTITY (numero_Cuenta, ingresos) 
+                VALUES (:numeroCuenta, :ingresos)
+            ]]>
+        </query>
+    </named-native-query>
+    
+    <named-native-query
+        name="CuentaEntity.actualizarCuenta">
+        <query>
+            <![CDATA[
+                UPDATE CUENTA_ENTITY SET numero_Cuenta = :numeroCuenta,
+                ingresos = :ingresos
+                WHERE id = :id
+            ]]>
+        </query>
+    </named-native-query>
+    
+        <named-native-query
+        name="CuentaEntity.eliminarCuenta">
+        <query>
+            <![CDATA[
+                DELETE FROM CUENTA_ENTITY WHERE id = :id
+            ]]>
+        </query>
+    </named-native-query>
 
 </entity-mappings>

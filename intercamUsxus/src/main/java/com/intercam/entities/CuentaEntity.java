@@ -5,8 +5,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.validation.constraints.Digits;
-import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.DecimalMin;
 import lombok.Data;
 
 /**
@@ -21,11 +20,10 @@ public class CuentaEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Digits(integer = 10, fraction = 0)
     @Column(nullable = false)
     private Integer numeroCuenta;
 
-    @Min(value = 1, message = "Los ingresos deben ser mayores a 0")
+    @DecimalMin(value = "0.01", message = "Los ingresos deben ser mayores a 0")
     @Column(nullable = false)
     private Float ingresos;
     

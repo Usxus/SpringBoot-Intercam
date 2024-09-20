@@ -1,10 +1,8 @@
 package com.intercam.controller;
 
-import com.fasterxml.jackson.databind.JsonNode;
 import com.intercam.entities.UsuarioEntity;
 import com.intercam.service.UsuarioService;
 import static com.intercam.util.Constantes.MENSAJE;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
