@@ -56,5 +56,57 @@
             ]]>
         </query>
     </named-native-query>
+    
+    <named-native-query
+        name="DireccionEntity.obtenerDireccionId"
+        result-class="com.intercam.entities.DireccionEntity">
+        <query>
+            <![CDATA[
+                SELECT * FROM DIRECCION_ENTITY WHERE id = :id
+            ]]>
+        </query>
+    </named-native-query>
+    
+    <named-native-query
+        name="DireccionEntity.obtenerDireccion"
+        result-class="com.intercam.entities.DireccionEntity">
+        <query>
+            <![CDATA[
+                SELECT * FROM DIRECCION_ENTITY 
+            ]]>
+        </query>
+    </named-native-query>
+    
+    <named-native-query
+        name="DireccionEntity.crearDireccion">
+        <query>
+            <![CDATA[
+                INSERT INTO DIRECCION_ENTITY (codigo_Postal, estado) 
+                VALUES (:codigoPostal, :estado)
+            ]]>
+        </query>
+    </named-native-query>
+    
+    <named-native-query
+        name="DireccionEntity.actualizarDireccion">
+        <query>
+            <![CDATA[
+                UPDATE DIRECCION_ENTITY SET codigo_Postal = :codigoPostal,
+                estado = :estado
+                WHERE id = :id
+            ]]>
+        </query>
+    </named-native-query>
+    
+        <named-native-query
+        name="DireccionEntity.eliminarDireccion">
+        <query>
+            <![CDATA[
+                DELETE FROM DIRECCION_ENTITY WHERE id = :id
+            ]]>
+        </query>
+    </named-native-query>
+    
+    
 
 </entity-mappings>
