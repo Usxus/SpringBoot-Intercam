@@ -1,0 +1,121 @@
+{
+	"info": {
+		"_postman_id": "b181ff6f-346a-4e93-8c23-eb4ed2f0adde",
+		"name": "usuario",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29858694"
+	},
+	"item": [
+		{
+			"name": "consultarUsuario",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/intercam/usuario/consultar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"intercam",
+						"usuario",
+						"consultar"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "registrarUsuario",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\": \"Juan\",\r\n    \"apellidoPaterno\": \"Perez\",\r\n    \"apellidoMaterno\": \"Gomez\",\r\n    \"fechaNacimiento\": \"15-12-1990\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/intercam/usuario/crear",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"intercam",
+						"usuario",
+						"crear"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "actualizarUsuario",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\": \"Jesus\",\r\n    \"apellidoPaterno\": \"Parra\",\r\n    \"apellidoMaterno\": \"Galvan\",\r\n    \"fechaNacimiento\": \"30-12-1995\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/intercam/usuario/actualizar/98",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"intercam",
+						"usuario",
+						"actualizar",
+						"98"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "eliminarUsuario",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/intercam/usuario/eliminar/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"intercam",
+						"usuario",
+						"eliminar",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

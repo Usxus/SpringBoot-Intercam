@@ -1,0 +1,37 @@
+{
+	"info": {
+		"_postman_id": "995e4500-579e-447b-8db2-5df827591db9",
+		"name": "ComplementarioDatosClientesController",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29858694"
+	},
+	"item": [
+		{
+			"name": "consultarDatosClientes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/intercam/datosClientes/consultar?id=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"intercam",
+						"datosClientes",
+						"consultar"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
