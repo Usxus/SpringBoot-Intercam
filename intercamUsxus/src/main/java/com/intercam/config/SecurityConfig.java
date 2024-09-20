@@ -22,7 +22,7 @@ public class SecurityConfig {
                 .frameOptions(frameOptions -> frameOptions.sameOrigin())
                 )
                 .authorizeHttpRequests(requests -> requests
-                .requestMatchers("/api-docs/**", "/swagger-ui/**", "/h2-console/**", "/cuenta/**", "/direccion/**", "/usuario/**").permitAll()
+                .requestMatchers("/api-docs/**", "/swagger-ui/**", "/h2-console/**", "/cuenta/**", "/direccion/**", "/usuario/**", "/datosClientes/**").permitAll()
                 .anyRequest().authenticated()
                 );
         return http.build();

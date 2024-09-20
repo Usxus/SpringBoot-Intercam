@@ -22,11 +22,11 @@ public class CuentaServiceImpl implements CuentaService {
     @Override
     public List<CuentaEntity> obtenerCuenta(Integer id) {
         if (id != null) {
-            List<CuentaEntity> usuarios = cuentaRepository.obtenerCuentaId(id);
-            if (usuarios.isEmpty()) {
+            List<CuentaEntity> cuenta = cuentaRepository.obtenerCuentaId(id);
+            if (cuenta.isEmpty()) {
                 throw new CustomExceptions.ResourceNotFoundException("Cuenta no encontrado con el siguiente id: : " + id);
             }
-            return usuarios;
+            return cuenta;
         } else {
             return cuentaRepository.obtenerCuenta();
         }
